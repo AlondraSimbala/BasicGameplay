@@ -8,11 +8,15 @@ public class SpawnManager : MonoBehaviour
     private float spawnRangeX = 20;
     private float spawnRangeZ = 20;
     private float startDelay = 2;
-    private float spawnInterval = 1.5f;
+    private float spawnInterval;
 
     // Start is called before the first frame update
     void Start()
     {
+        //set spawnInterval to random number
+        spawnInterval = Random.Range(3, 5);
+        //spawn interval halves values between 3 - 5 seconds
+
         InvokeRepeating("SpawnRandomAnimal", startDelay, spawnInterval);
     }
 
